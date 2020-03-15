@@ -53,11 +53,9 @@ def handle_message(location):
     if location in locations:
         #rows = get_data_bas_location(location, df)
         row = get_data_bas_location(location, df)
-        #print(rows)
         #msg_out = "\n\n".join(generate_message_from_row(row) for row in rows)
         msg_out = generate_message_from_row(row)
-        #print(msg_out)
     else:
-        msg_out = "DEFAULT RESPONSE"
+        msg_out = "There is no data for this location or check you spelling"
 
     return msg_out

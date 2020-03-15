@@ -1,11 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from twilio.rest import Client
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from twilio.twiml.messaging_response import MessagingResponse
+from django.views.generic.edit import CreateView
+from django.views.generic.detail import DetailView
 from info.models import Tip
 from info import utils
+from .models import Subscriber
+from .forms import SubscriberCreateForm
 
 
 @csrf_exempt
@@ -73,3 +77,20 @@ def broadcast_sms(request):
             msg = "you need to provide phone number!"
 
     return HttpResponse(msg, 200)
+
+
+class SubscribeView(CreateView):
+    template_name = 'subscription.html'
+    form_class = SubscriberCreateForm
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        #self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect(self.get_success_url())
+
+
+class SubscriberDetailsView(DetailView):
+    model = Subscriber
+    context_object_name = "subscriber"
+    template_name = "details.html"
