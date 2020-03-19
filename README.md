@@ -43,7 +43,7 @@ Use virtualenv to create an environment install app dependencies:
 ```virtualenv venv
 source venv/bin/activate
 pip3 install requirements.txt`
-export GOOGLE_APPLICATION_CREDENTIALS=keys.json`
+export GOOGLE_APPLICATION_CREDENTIALS=keys.json```
 
 To start your own localhost flask server: 
 `python3 main.py`
