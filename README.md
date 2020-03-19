@@ -29,12 +29,19 @@ These stats are extremely important; People at higher risk of contracting COVID-
 Making this information accessible via text, along with the latest Coronavirus news, and the CDC advice about how to stay safe would greatly aid mankind in it's quest to control this fatal virus. Covid Helpline is a *reasonably easy and cheap solution* to this issue.
 
 
-### Installing
+### Getting Started
 
 To get started make sure you have [Python](https://www.python.org/downloads/) and [Twilio CLI](https://www.twilio.com/docs/twilio-cli/quickstart) installed.
 
-Install app dependencies:
+In order to run the project you need the following credentials:
+keys.json that you can get by generating an IAM role in [GCP](https://cloud.google.com/storage/docs/access-control/iam-roles) with the Storage Object Admin Role.
+In the `keys.py` you need to fill your Twillio credentials from the [Twillio console](https://www.twilio.com/console) and your news api token that you can genenrate [here](https://newsapi.org/)
+Use virtualenv to create an environment install app dependencies:
+
+`virtualenv venv`
+`source venv/bin/activate`
 `pip3 install requirements.txt` 
+`export GOOGLE_APPLICATION_CREDENTIALS=keys.json`
 
 To start your own localhost flask server: 
 `python3 main.py`
