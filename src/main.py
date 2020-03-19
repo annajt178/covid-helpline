@@ -8,10 +8,11 @@ from google.cloud import storage
 from google.cloud.storage import blob
 
 
-from keys import account_sid, auth_token
+client = storage.Client(project='covid-helpline')
+bucket = client.get_bucket('covid-sms')
+
 from data_utils import *
 from responses import *
-from news import *
 from twillio_utils import *
 
 app = Flask(__name__)
@@ -28,9 +29,7 @@ def sms_ahoy_reply():
     resp.message('{}'.format(msg_out_response))
     return str(resp)
 
-client_twillio = Client(account_sid, auth_token)
-client = storage.Client(project='covid-helpline')
-bucket = client.get_bucket('covid-sms')
+
 
 if __name__ == "__main__":
-    app.run( host='0.0.0.0',port=8080, debug=True)
+    app.run( host='0.0.0.0',port=8080, debug=False)
