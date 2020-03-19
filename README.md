@@ -42,7 +42,7 @@ Use virtualenv to create an environment install app dependencies:
 
 ```virtualenv venv
 source venv/bin/activate
-pip3 install requirements.txt`
+pip3 install requirements.txt
 export GOOGLE_APPLICATION_CREDENTIALS=keys.json
 ```
 
