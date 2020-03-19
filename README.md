@@ -34,14 +34,16 @@ Making this information accessible via text, along with the latest Coronavirus n
 To get started make sure you have [Python](https://www.python.org/downloads/) and [Twilio CLI](https://www.twilio.com/docs/twilio-cli/quickstart) installed.
 
 In order to run the project you need the following credentials:
+
 keys.json that you can get by generating an IAM role in [GCP](https://cloud.google.com/storage/docs/access-control/iam-roles) with the Storage Object Admin Role.
+
 In the `keys.py` you need to fill your Twillio credentials from the [Twillio console](https://www.twilio.com/console) and your news api token that you can genenrate [here](https://newsapi.org/)
 Use virtualenv to create an environment install app dependencies:
 
-`virtualenv venv`
-`source venv/bin/activate`
-`pip3 install requirements.txt` 
-`export GOOGLE_APPLICATION_CREDENTIALS=keys.json`
+```virtualenv venv
+source venv/bin/activate
+pip3 install requirements.txt`
+export GOOGLE_APPLICATION_CREDENTIALS=keys.json`
 
 To start your own localhost flask server: 
 `python3 main.py`
