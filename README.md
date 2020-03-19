@@ -37,7 +37,8 @@ In order to run the project you need the following credentials:
 
 keys.json that you can get by generating an IAM role in [GCP](https://cloud.google.com/storage/docs/access-control/iam-roles) with the Storage Object Admin Role.
 
-In the `keys.py` you need to fill your Twillio credentials from the [Twillio console](https://www.twilio.com/console) and your news api token that you can genenrate [here](https://newsapi.org/)
+In the `keys.py` you need to fill your Twillio credentials from the [Twillio console](https://www.twilio.com/console) and your news api token that you can genenrate [here](https://newsapi.org/).
+
 Use virtualenv to create an environment install app dependencies:
 
 ```virtualenv venv
